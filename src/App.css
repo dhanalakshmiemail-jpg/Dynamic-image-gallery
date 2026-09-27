@@ -1,0 +1,411 @@
+/* =========================
+   GENERAL
+========================= */
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 60px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  );
+
+  color: white;
+}
+
+.header-content {
+  max-width: 800px;
+}
+
+.small-title {
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.header h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 25px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: #777;
+  font-size: 16px;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: repeat(
+    2,
+    1fr
+  );
+
+  gap: 30px;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+.image-card {
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: white;
+
+  border: 1px solid white;
+
+  padding: 10px 20px;
+
+  border-radius: 25px;
+
+  font-size: 14px;
+
+  backdrop-filter: blur(5px);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+  padding: 22px;
+}
+
+.category {
+  display: inline-block;
+
+  font-size: 12px;
+
+  color: #667eea;
+
+  background: #eef0ff;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+.card-content h3 {
+  font-size: 22px;
+
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: #777;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 25px;
+
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+
+  max-width: 850px;
+
+  width: 100%;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+.modal-content img {
+  width: 100%;
+
+  max-height: 65vh;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.modal-info {
+  padding: 25px;
+}
+
+.modal-info h2 {
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+.modal-info p {
+  color: #777;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-button {
+  position: absolute;
+
+  right: 15px;
+  top: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #333;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+
+  background: #667eea;
+
+  color: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 30px;
+
+  background: #1f1f2e;
+
+  color: #aaa;
+
+  font-size: 14px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .header h1 {
+    font-size: 38px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .image-wrapper {
+    height: 280px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .header {
+    min-height: 280px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .gallery-container {
+    padding: 50px 15px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .image-wrapper {
+    height: 230px;
+  }
+
+}
